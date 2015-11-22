@@ -170,7 +170,7 @@
 					@board.print_state
 					puts "#{@board.current_player.name}'s turn. Pick a column"
 					column = gets.chomp.to_i
-					unless column.is_a? Integer
+					unless column > 0 && column < 8
 						raise ArgumentError
 					else
 						@board.make_move(column)
